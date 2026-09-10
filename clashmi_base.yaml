@@ -17,6 +17,7 @@ dns:
     - "*.lan"
     - "*.local"
     - "*.arpa"
+    - +.sankuai.com
     - time.*.com
     - ntp.*.com
     - +.market.xiaomi.com
@@ -30,6 +31,8 @@ dns:
     - 119.29.29.29
     - 223.5.5.5
   nameserver-policy:
+    "+.sankuai.com":
+      - system
     geosite:cn:
       - 119.29.29.29
       - 223.5.5.5
