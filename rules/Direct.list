@@ -1,3 +1,7 @@
+# Corporate domains also have fixed DIRECT rules in mihomo_common.yaml.
+DOMAIN-SUFFIX,sankuai.com
+DOMAIN-SUFFIX,sankuai.info
+DOMAIN-SUFFIX,51ping.com
 DOMAIN-SUFFIX,mynocode.host
 DOMAIN,dns.adguard.com
 DOMAIN,api.dler.io

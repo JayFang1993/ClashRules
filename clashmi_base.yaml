@@ -8,7 +8,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 
 dns:
-  enable: false
+  enable: true
   ipv6: false
   enhanced-mode: redir-host
   listen: 0.0.0.0:53
@@ -19,6 +19,7 @@ dns:
     - "*.local"
     - "*.arpa"
     - +.sankuai.com
+    - +.sankuai.info
     - +.51ping.com
     - time.*.com
     - ntp.*.com
@@ -35,14 +36,10 @@ dns:
   nameserver-policy:
     "+.sankuai.com":
       - system
+    "+.sankuai.info":
+      - system
     "+.51ping.com":
       - system
-    geosite:cn:
-      - 119.29.29.29
-      - 223.5.5.5
-    geosite:geolocation-!cn:
-      - tls://1.0.0.1:853
-      - tls://dns.google:853
   proxy-server-nameserver:
     - 119.29.29.29
     - 223.5.5.5
@@ -54,7 +51,26 @@ dns:
   fallback-filter:
     geoip: true
     geoip-code: CN
-    geosite:
-      - gfw
     ipcidr:
       - 240.0.0.0/4
+
+# 域名嗅探：让 UDP/QUIC 443 流量也能提取 SNI 域名，命中 DOMAIN 规则
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  override-destination: true
+  skip-domain:
+    - +.sankuai.com
+    - +.sankuai.info
+    - +.51ping.com
+    - +.local
+    - +.lan
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443]
+  force-domain:
+    - +.facebook.com
+    - +.meta.ai
+    - +.fbcdn.net

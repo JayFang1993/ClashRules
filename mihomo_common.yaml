@@ -1,0 +1,249 @@
+# Shared policy configuration for Mihomo: Clash Verge, Clash Mi and OpenClash.
+# Import airport nodes separately; this file contains no subscription credentials.
+# Keep DNS, TUN and listener settings in each client's local configuration.
+profile:
+  store-selected: true
+
+proxy-groups:
+  - {name: "📦 Notion", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", DIRECT, "🌐 Default"]}
+  - {name: "🍎 Apple", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", DIRECT, "🌐 Default"]}
+  - {name: "🤖 ChatGPT", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🧠 AI", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "📨 Telegram", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "📞 即时通讯", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "💬 社交媒体", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🎬 YouTube", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🎥 Netflix", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🎵 TikTok", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "📸 Instagram", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🐦 X", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🛠 GitHub", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🚝 测速工具", type: select, proxies: [DIRECT, "🧭 手动选择", "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🎮 Steam", type: select, proxies: [DIRECT, "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🟦 OKX", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", DIRECT, "🌐 Default"]}
+  - {name: "🟨 Binance", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", DIRECT, "🌐 Default"]}
+  - {name: "🟪 Bybit", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", DIRECT, "🌐 Default"]}
+  - {name: "🟥 Adobe", type: select, proxies: [REJECT, DIRECT, "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🛑 全球拦截", type: select, proxies: [REJECT, DIRECT]}
+  - {name: "🍃 应用净化", type: select, proxies: [REJECT, DIRECT]}
+  - {name: "🆎 AdBlock", type: select, proxies: [REJECT, DIRECT]}
+  - {name: "🔎 Google", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "☁️ cloudflare", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🪟 Microsoft", type: select, proxies: [DIRECT, "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🚀 手动选择", type: select, proxies: ["♻️ 自动选择", "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🧭 手动选择", DIRECT]}
+  - {name: "🌐 Default", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "♻️ 自动选择", "🧭 手动选择", DIRECT]}
+  - {name: "🎯 全球直连", type: select, proxies: [DIRECT, "🚀 手动选择", "♻️ 自动选择"]}
+  - {name: "🐟 漏网之鱼", type: select, proxies: ["🌐 Default", DIRECT, "♻️ 自动选择", "🧊 冷门节点", "🧭 手动选择", "🚀 手动选择"]}
+  - {name: "🧭 手动选择", type: select, include-all-proxies: true}
+  - {name: "♻️ 自动选择", type: url-test, include-all-proxies: true, url: "https://www.gstatic.com/generate_204", interval: 600, tolerance: 50, lazy: true}
+  - {name: "🇭🇰 HK", type: url-test, include-all-proxies: true, filter: "(?i)香港|HK|Hong", url: "https://www.gstatic.com/generate_204", interval: 600, tolerance: 50, lazy: true}
+  - {name: "🇹🇼 TW", type: url-test, include-all-proxies: true, filter: "(?i)台湾|TW|Taiwan|Taipei|hinet", url: "https://www.gstatic.com/generate_204", interval: 600, tolerance: 50, lazy: true}
+  - {name: "🇯🇵 JP", type: url-test, include-all-proxies: true, filter: "(?i)日本|JP|Japan|Tokyo|Osaka", url: "https://www.gstatic.com/generate_204", interval: 600, tolerance: 50, lazy: true}
+  - {name: "🇸🇬 SG", type: url-test, include-all-proxies: true, filter: "(?i)新加坡|SG|Singapore", url: "https://www.gstatic.com/generate_204", interval: 600, tolerance: 50, lazy: true}
+  - {name: "🇺🇸 US", type: url-test, include-all-proxies: true, filter: "(?i)美国|US|United|Los|Seattle|York", url: "https://www.gstatic.com/generate_204", interval: 600, tolerance: 50, lazy: true}
+  - {name: "🧊 冷门节点", type: select, include-all-proxies: true, filter: "(?i)英国|GB|UK|阿根廷|AR|俄罗斯|RU|土耳其|TR|韩国|KR|印度|IN|德国|DE|加拿大|CA|澳大利亚|AU|法国|FR|乌克兰|UA"}
+
+rule-providers:
+  Broker:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/forecho/broker-rules/main/rule/Clash/Broker.yaml
+    path: ./rule-cache/direct-source/Broker.yaml
+    interval: 86400
+  Adobe: &text-source
+    type: http
+    behavior: classical
+    format: text
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Adobe.list
+    path: ./rule-cache/direct-source/Adobe.list
+    interval: 86400
+  LocalAreaNetwork:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./rule-cache/direct-source/LocalAreaNetwork.list
+  UnBan:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+    path: ./rule-cache/direct-source/UnBan.list
+  Direct:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Direct.list
+    path: ./rule-cache/direct-source/Direct.list
+    interval: 3600
+  BanAD:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    path: ./rule-cache/direct-source/BanAD.list
+  BanProgramAD:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+    path: ./rule-cache/direct-source/BanProgramAD.list
+  Proxy:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Proxy.list
+    path: ./rule-cache/direct-source/Proxy.list
+  Notion:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Notion.list
+    path: ./rule-cache/direct-source/Notion.list
+  Telegram:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+    path: ./rule-cache/direct-source/Telegram.list
+  ChatGPT:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/ChatGPT.list
+    path: ./rule-cache/direct-source/ChatGPT.list
+  AI:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/AI.list
+    path: ./rule-cache/direct-source/AI.list
+  Apple:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+    path: ./rule-cache/direct-source/Apple.list
+  YouTube:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/YouTube.list
+    path: ./rule-cache/direct-source/YouTube.list
+  Netflix:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+    path: ./rule-cache/direct-source/Netflix.list
+  TikTok:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/TikTok.list
+    path: ./rule-cache/direct-source/TikTok.list
+  Instagram:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Instagram.list
+    path: ./rule-cache/direct-source/Instagram.list
+  X:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/X.list
+    path: ./rule-cache/direct-source/X.list
+  GitHub:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/GitHub.list
+    path: ./rule-cache/direct-source/GitHub.list
+  Speedtest:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Speedtest.list
+    path: ./rule-cache/direct-source/Speedtest.list
+  Steam:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list
+    path: ./rule-cache/direct-source/Steam.list
+  OKX:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/OKX.list
+    path: ./rule-cache/direct-source/OKX.list
+  Binance:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Binance.list
+    path: ./rule-cache/direct-source/Binance.list
+  Bybit:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Bybit.list
+    path: ./rule-cache/direct-source/Bybit.list
+  GoogleFCM:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+    path: ./rule-cache/direct-source/GoogleFCM.list
+  Social:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Social.list
+    path: ./rule-cache/direct-source/Social.list
+  Cloudflare:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Cloudflare.list
+    path: ./rule-cache/direct-source/Cloudflare.list
+  Google:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Google.list
+    path: ./rule-cache/direct-source/Google.list
+  Microsoft:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+    path: ./rule-cache/direct-source/Microsoft.list
+  GoogleCN:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./rule-cache/direct-source/GoogleCN.list
+  SteamCN:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list
+    path: ./rule-cache/direct-source/SteamCN.list
+  ProxyMedia:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+    path: ./rule-cache/direct-source/ProxyMedia.list
+  ProxyLite:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+    path: ./rule-cache/direct-source/ProxyLite.list
+  ChinaDomain:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./rule-cache/direct-source/ChinaDomain.list
+  ChinaCompanyIp:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rule-cache/direct-source/ChinaCompanyIp.list
+
+rules:
+  # Keep critical corporate and LAN access independent of remote rule downloads.
+  - DOMAIN-SUFFIX,sankuai.com,DIRECT
+  - DOMAIN-SUFFIX,sankuai.info,DIRECT
+  - DOMAIN-SUFFIX,51ping.com,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,lan,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,11.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,33.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,43.167.232.32/32,DIRECT,no-resolve
+  - DOMAIN-SUFFIX,qingyingyong.net,♻️ 自动选择
+  - DOMAIN-SUFFIX,workers.dev,♻️ 自动选择
+  - DOMAIN-SUFFIX,muse.ai,🧠 AI
+  - RULE-SET,Broker,🚀 手动选择
+  - RULE-SET,Adobe,🟥 Adobe
+  - RULE-SET,LocalAreaNetwork,DIRECT
+  - RULE-SET,UnBan,🎯 全球直连
+  - RULE-SET,Direct,DIRECT
+  - RULE-SET,BanAD,🛑 全球拦截
+  - RULE-SET,BanProgramAD,🍃 应用净化
+  - RULE-SET,Proxy,🚀 手动选择
+  - RULE-SET,Notion,📦 Notion
+  - RULE-SET,Telegram,📨 Telegram
+  - RULE-SET,ChatGPT,🤖 ChatGPT
+  - RULE-SET,AI,🧠 AI
+  - RULE-SET,Apple,🍎 Apple
+  - RULE-SET,YouTube,🎬 YouTube
+  - RULE-SET,Netflix,🎥 Netflix
+  - RULE-SET,TikTok,🎵 TikTok
+  - RULE-SET,Instagram,📸 Instagram
+  - RULE-SET,X,🐦 X
+  - RULE-SET,GitHub,🛠 GitHub
+  - RULE-SET,Speedtest,🚝 测速工具
+  - RULE-SET,Steam,🎮 Steam
+  - RULE-SET,OKX,🟦 OKX
+  - RULE-SET,Binance,🟨 Binance
+  - RULE-SET,Bybit,🟪 Bybit
+  - RULE-SET,GoogleFCM,📞 即时通讯
+  - RULE-SET,Social,💬 社交媒体
+  - RULE-SET,Cloudflare,☁️ cloudflare
+  - RULE-SET,Google,🔎 Google
+  - RULE-SET,Microsoft,🪟 Microsoft
+  - RULE-SET,GoogleCN,🎯 全球直连
+  - RULE-SET,SteamCN,🎯 全球直连
+  - RULE-SET,ProxyMedia,🌐 Default
+  - RULE-SET,ProxyLite,🚀 手动选择
+  - RULE-SET,ChinaDomain,🎯 全球直连
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+  - GEOIP,CN,🎯 全球直连
+  - MATCH,🐟 漏网之鱼

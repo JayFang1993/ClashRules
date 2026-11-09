@@ -1,0 +1,15 @@
+{
+  "name": "tomatofive-clash-subscription",
+  "account_id": "4398001755d4709843897d0255355f0b",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-09",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "sub.tomatofive.com", "custom_domain": true }
+  ],
+  "rules": [
+    { "type": "Text", "globs": ["**/*.yaml"], "fallthrough": true }
+  ],
+  "observability": { "enabled": false }
+}
