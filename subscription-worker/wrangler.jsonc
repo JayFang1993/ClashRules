@@ -1,5 +1,5 @@
 {
-  "name": "tomatofive-clash-subscription",
+  "name": "clashrules",
   "account_id": "4398001755d4709843897d0255355f0b",
   "main": "worker.mjs",
   "compatibility_date": "2026-11-09",

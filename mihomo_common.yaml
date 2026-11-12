@@ -193,10 +193,12 @@ rule-providers:
     path: ./rule-cache/direct-source/ChinaCompanyIp.list
 
 rules:
-  # Keep critical corporate and LAN access independent of remote rule downloads.
+  # Keep critical corporate, Zoom and LAN access independent of remote rule downloads.
   - DOMAIN-SUFFIX,sankuai.com,DIRECT
   - DOMAIN-SUFFIX,sankuai.info,DIRECT
   - DOMAIN-SUFFIX,51ping.com,DIRECT
+  - DOMAIN-SUFFIX,zoom.us,DIRECT
+  - DOMAIN-SUFFIX,zoom.com,DIRECT
   - DOMAIN-SUFFIX,local,DIRECT
   - DOMAIN-SUFFIX,lan,DIRECT
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
@@ -207,6 +209,7 @@ rules:
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
   - IP-CIDR,43.167.232.32/32,DIRECT,no-resolve
+  - IP-CIDR,43.128.130.57/32,DIRECT,no-resolve
   - DOMAIN-SUFFIX,qingyingyong.net,♻️ 自动选择
   - DOMAIN-SUFFIX,workers.dev,♻️ 自动选择
   - DOMAIN-SUFFIX,muse.ai,🧠 AI

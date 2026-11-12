@@ -29,6 +29,14 @@ test("serves complete YAML anonymously with independent providers", async () => 
   assert.match(text, /proxy-providers: /);
   assert.match(text, /include-all-providers: true/);
   assert.match(text, /DOMAIN-SUFFIX,sankuai\.com,DIRECT/);
+  const proxyLiteRule = text.indexOf("RULE-SET,ProxyLite,");
+  assert.ok(proxyLiteRule >= 0);
+  for (const domain of ["zoom.us", "zoom.com"]) {
+    const directRule = text.indexOf(`DOMAIN-SUFFIX,${domain},DIRECT`);
+    assert.ok(directRule >= 0 && directRule < proxyLiteRule);
+  }
+  const directIpRule = text.indexOf("IP-CIDR,43.128.130.57/32,DIRECT,no-resolve");
+  assert.ok(directIpRule >= 0 && directIpRule < text.indexOf("RULE-SET,Broker,"));
   assert.match(text, /dns:\n  enable: true/);
   assert.match(text, /enhanced-mode: redir-host/);
   assert.ok(!text.includes("api.v1.mk") && !text.includes("url.v1.mk"));

@@ -1,7 +1,10 @@
-# Corporate domains also have fixed DIRECT rules in mihomo_common.yaml.
+# Corporate and Zoom domains also have fixed DIRECT rules in mihomo_common.yaml.
 DOMAIN-SUFFIX,sankuai.com
 DOMAIN-SUFFIX,sankuai.info
 DOMAIN-SUFFIX,51ping.com
+DOMAIN-SUFFIX,zoom.us
+DOMAIN-SUFFIX,zoom.com
+IP-CIDR,43.128.130.57/32,no-resolve
 DOMAIN-SUFFIX,mynocode.host
 DOMAIN,dns.adguard.com
 DOMAIN,api.dler.io
