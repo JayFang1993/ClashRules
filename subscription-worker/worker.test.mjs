@@ -29,12 +29,6 @@ test("serves complete YAML anonymously with independent providers", async () => 
   assert.match(text, /proxy-providers: /);
   assert.match(text, /include-all-providers: true/);
   assert.match(text, /DOMAIN-SUFFIX,sankuai\.com,DIRECT/);
-  const proxyLiteRule = text.indexOf("RULE-SET,ProxyLite,");
-  assert.ok(proxyLiteRule >= 0);
-  for (const domain of ["zoom.us", "zoom.com"]) {
-    const directRule = text.indexOf(`DOMAIN-SUFFIX,${domain},DIRECT`);
-    assert.ok(directRule >= 0 && directRule < proxyLiteRule);
-  }
   const directIpRule = text.indexOf("IP-CIDR,43.128.130.57/32,DIRECT,no-resolve");
   assert.ok(directIpRule >= 0 && directIpRule < text.indexOf("RULE-SET,Broker,"));
   assert.match(text, /dns:\n  enable: true/);
@@ -43,6 +37,38 @@ test("serves complete YAML anonymously with independent providers", async () => 
   assert.ok(!text.includes("geosite:"));
   assert.ok(!/^tun:|^mixed-port:|^port:|^socks-port:/m.test(text));
   assert.ok(text.includes("VPS-KR") && text.includes(env.AIRPORT_URL));
+});
+
+test("routes Zoom domains and native meeting processes directly before remote policies", async () => {
+  const response = await worker.fetch(request(), env);
+  const text = await response.text();
+  const rules = [
+    "DOMAIN-SUFFIX,zoom.us",
+    "DOMAIN-SUFFIX,zoom.com",
+    "DOMAIN-SUFFIX,zoom.com.cn",
+    "PROCESS-NAME,zoom.us",
+    "PROCESS-NAME,CptHost",
+    "PROCESS-NAME,DXMeetingApp_arm",
+  ];
+  const firstRemoteRule = text.indexOf("  - RULE-SET,");
+  assert.ok(firstRemoteRule >= 0);
+  for (const rule of rules) {
+    const directRule = text.indexOf(`  - ${rule},DIRECT\n`);
+    assert.ok(directRule >= 0 && directRule < firstRemoteRule, rule);
+  }
+
+  const directList = await readFile(new URL("../rules/Direct.list", import.meta.url), "utf8");
+  for (const rule of rules) assert.ok(directList.split(/\r?\n/).includes(rule), rule);
+
+  for (const filename of ["metafenliu.ini", "metafenliu_public.ini", "metafenliu_full.ini"]) {
+    const config = await readFile(new URL(`../${filename}`, import.meta.url), "utf8");
+    const firstProxyRule = config.indexOf("ruleset=🚀 手动选择,");
+    assert.ok(firstProxyRule >= 0);
+    for (const rule of rules) {
+      const directRule = config.indexOf(`ruleset=DIRECT,[]${rule}\n`);
+      assert.ok(directRule >= 0 && directRule < firstProxyRule, `${filename}: ${rule}`);
+    }
+  }
 });
 
 test("HEAD returns metadata without configuration body", async () => {

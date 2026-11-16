@@ -4,6 +4,10 @@ DOMAIN-SUFFIX,sankuai.info
 DOMAIN-SUFFIX,51ping.com
 DOMAIN-SUFFIX,zoom.us
 DOMAIN-SUFFIX,zoom.com
+DOMAIN-SUFFIX,zoom.com.cn
+PROCESS-NAME,zoom.us
+PROCESS-NAME,CptHost
+PROCESS-NAME,DXMeetingApp_arm
 IP-CIDR,43.128.130.57/32,no-resolve
 DOMAIN-SUFFIX,mynocode.host
 DOMAIN,dns.adguard.com
