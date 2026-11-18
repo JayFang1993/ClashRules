@@ -1,5 +1,14 @@
 import commonPolicy from "../mihomo_common.yaml";
 import iosBase from "../clashmi_base.yaml";
+import macBase from "../clashverge_base.yaml";
+
+// Every client subscribes to the base that matches how it manages ports, TUN and DNS,
+// while the policy, proxy groups and rules come from the shared mihomo_common.yaml.
+const clients = new Map([
+  ["/clashmi.yaml", { name: "Clash Mi", base: iosBase }],
+  ["/clashverge.yaml", { name: "Clash Verge", base: macBase }],
+]);
+const defaultClient = clients.get("/clashmi.yaml");
 
 const headers = {
   "Content-Type": "application/yaml; charset=utf-8",
@@ -8,7 +17,7 @@ const headers = {
   "profile-update-interval": "24",
 };
 
-export function buildConfiguration(env) {
+export function buildConfiguration(env, base = defaultClient.base) {
   const airport = new URL(env.AIRPORT_URL);
   if (airport.protocol !== "https:") throw new Error("Invalid airport URL");
   const nodes = JSON.parse(env.VPS_NODES);
@@ -43,20 +52,21 @@ export function buildConfiguration(env) {
     },
   };
   // JSON flow values are valid YAML and quote private values without interpolation.
-  return `${iosBase.trim()}\n\n${policy.trim()}\n\nproxies: ${JSON.stringify(nodes)}\nproxy-providers: ${JSON.stringify(providers)}\n`;
+  return `${base.trim()}\n\n${policy.trim()}\n\nproxies: ${JSON.stringify(nodes)}\nproxy-providers: ${JSON.stringify(providers)}\n`;
 }
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    if (!["/", "/clashmi.yaml"].includes(url.pathname)) {
+    const client = url.pathname === "/" ? defaultClient : clients.get(url.pathname);
+    if (!client) {
       return new Response("Not found\n", { status: 404, headers: { "Cache-Control": "no-store" } });
     }
     if (!["GET", "HEAD"].includes(request.method)) {
       return new Response("Method not allowed\n", { status: 405, headers: { Allow: "GET, HEAD" } });
     }
     try {
-      const config = buildConfiguration(env);
+      const config = buildConfiguration(env, client.base);
       return new Response(request.method === "HEAD" ? null : config, { headers });
     } catch {
       return new Response("Configuration unavailable\n", {

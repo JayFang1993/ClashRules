@@ -1,0 +1,60 @@
+# Base configuration for Clash Verge Rev on macOS.
+# Verge owns ports, TUN and the final config.yaml override, so this template
+# only pins the kernel DNS behaviour: macOS keeps using the system resolver and
+# the corporate domains stay on system DNS.
+allow-lan: false
+ipv6: false
+mode: Rule
+log-level: info
+
+dns:
+  enable: false
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 127.0.0.1:1053
+  use-hosts: true
+  use-system-hosts: true
+  default-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  nameserver:
+    - system
+  direct-nameserver:
+    - system
+  proxy-server-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fake-ip-filter:
+    - +.sankuai.com
+    - +.sankuai.info
+    - +.51ping.com
+    - "*.lan"
+    - "*.local"
+  nameserver-policy:
+    "+.sankuai.com":
+      - system
+    "+.sankuai.info":
+      - system
+    "+.51ping.com":
+      - system
+
+# Domain sniffing keeps UDP/QUIC 443 traffic on domain rules while TUN is on.
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  override-destination: true
+  skip-domain:
+    - +.sankuai.com
+    - +.sankuai.info
+    - +.51ping.com
+    - +.local
+    - +.lan
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443]
+  force-domain:
+    - +.facebook.com
+    - +.meta.ai
+    - +.fbcdn.net

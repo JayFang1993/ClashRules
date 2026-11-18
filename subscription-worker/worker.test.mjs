@@ -71,6 +71,17 @@ test("routes Zoom domains and native meeting processes directly before remote po
   }
 });
 
+test("serves per-client bases that share the same policy", async () => {
+  const ios = await (await worker.fetch(request("/clashmi.yaml"), env)).text();
+  const mac = await (await worker.fetch(request("/clashverge.yaml"), env)).text();
+  assert.match(ios, /dns:\n  enable: true/);
+  assert.match(mac, /dns:\n  enable: false/);
+  assert.match(mac, /RULE-SET,Claude,🧡 Claude/);
+  assert.ok(!/^tun:|^mixed-port:|^port:|^socks-port:/m.test(mac));
+  const policyOf = (text) => text.slice(text.indexOf("\nrules:")).trim();
+  assert.equal(policyOf(mac), policyOf(ios));
+});
+
 test("HEAD returns metadata without configuration body", async () => {
   const response = await worker.fetch(request("/", "HEAD"), env);
   assert.equal(response.status, 200);
