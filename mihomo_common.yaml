@@ -6,7 +6,7 @@ profile:
 
 proxy-groups:
   - {name: "📦 Notion", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", DIRECT, "🌐 Default"]}
-  - {name: "🍎 Apple", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", DIRECT, "🌐 Default"]}
+  - {name: "🍎 Apple", type: select, proxies: [DIRECT, "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "🤖 ChatGPT", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "🧡 Claude", type: select, proxies: ["🇸🇬 SG", "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "🧠 AI", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
