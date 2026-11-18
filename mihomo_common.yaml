@@ -8,6 +8,7 @@ proxy-groups:
   - {name: "📦 Notion", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", DIRECT, "🌐 Default"]}
   - {name: "🍎 Apple", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", DIRECT, "🌐 Default"]}
   - {name: "🤖 ChatGPT", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🧡 Claude", type: select, proxies: ["🇸🇬 SG", "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "🧠 AI", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "📨 Telegram", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "📞 即时通讯", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
@@ -95,6 +96,10 @@ rule-providers:
     <<: *text-source
     url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/ChatGPT.list
     path: ./rule-cache/direct-source/ChatGPT.list
+  Claude:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Claude.list
+    path: ./rule-cache/direct-source/Claude.list
   AI:
     <<: *text-source
     url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/AI.list
@@ -228,6 +233,7 @@ rules:
   - RULE-SET,Notion,📦 Notion
   - RULE-SET,Telegram,📨 Telegram
   - RULE-SET,ChatGPT,🤖 ChatGPT
+  - RULE-SET,Claude,🧡 Claude
   - RULE-SET,AI,🧠 AI
   - RULE-SET,Apple,🍎 Apple
   - RULE-SET,YouTube,🎬 YouTube
