@@ -1,0 +1,5 @@
+.DS_Store
+.catpaw/
+.harness/
+node_modules/
+.worker-cache/
