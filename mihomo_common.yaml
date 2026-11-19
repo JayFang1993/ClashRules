@@ -9,6 +9,7 @@ proxy-groups:
   - {name: "🍎 Apple", type: select, proxies: [DIRECT, "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "🤖 ChatGPT", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "🧡 Claude", type: select, proxies: ["🇸🇬 SG", "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "💠 Gemini", type: select, proxies: ["🇺🇸 US", "🇯🇵 JP", "🇸🇬 SG", "🇭🇰 HK", "🇹🇼 TW", "🧊 冷门节点", "🌐 Default"]}
   - {name: "🧠 AI", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "📨 Telegram", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "📞 即时通讯", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
@@ -100,6 +101,10 @@ rule-providers:
     <<: *text-source
     url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Claude.list
     path: ./rule-cache/direct-source/Claude.list
+  Gemini:
+    <<: *text-source
+    url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/Gemini.list
+    path: ./rule-cache/direct-source/Gemini.list
   AI:
     <<: *text-source
     url: https://raw.githubusercontent.com/JayFang1993/ClashRules/main/rules/AI.list
@@ -221,7 +226,6 @@ rules:
   - IP-CIDR,43.128.130.57/32,DIRECT,no-resolve
   - DOMAIN-SUFFIX,qingyingyong.net,♻️ 自动选择
   - DOMAIN-SUFFIX,workers.dev,♻️ 自动选择
-  - DOMAIN-SUFFIX,muse.ai,🧠 AI
   - RULE-SET,Broker,🚀 手动选择
   - RULE-SET,Adobe,🟥 Adobe
   - RULE-SET,LocalAreaNetwork,DIRECT
@@ -234,6 +238,7 @@ rules:
   - RULE-SET,Telegram,📨 Telegram
   - RULE-SET,ChatGPT,🤖 ChatGPT
   - RULE-SET,Claude,🧡 Claude
+  - RULE-SET,Gemini,💠 Gemini
   - RULE-SET,AI,🧠 AI
   - RULE-SET,Apple,🍎 Apple
   - RULE-SET,YouTube,🎬 YouTube
