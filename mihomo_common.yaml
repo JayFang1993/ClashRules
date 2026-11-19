@@ -29,7 +29,7 @@ proxy-groups:
   - {name: "🛑 全球拦截", type: select, proxies: [REJECT, DIRECT]}
   - {name: "🍃 应用净化", type: select, proxies: [REJECT, DIRECT]}
   - {name: "🆎 AdBlock", type: select, proxies: [REJECT, DIRECT]}
-  - {name: "🔎 Google", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
+  - {name: "🔎 Google", type: select, proxies: ["🇺🇸 US", "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🧊 冷门节点", "🌐 Default"]}
   - {name: "☁️ cloudflare", type: select, proxies: ["🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "🪟 Microsoft", type: select, proxies: [DIRECT, "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🌐 Default"]}
   - {name: "🚀 手动选择", type: select, proxies: ["♻️ 自动选择", "🇭🇰 HK", "🇹🇼 TW", "🇯🇵 JP", "🇸🇬 SG", "🇺🇸 US", "🧊 冷门节点", "🧭 手动选择", DIRECT]}
